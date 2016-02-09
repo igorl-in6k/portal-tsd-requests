@@ -14,7 +14,7 @@ tsdApp
       };
 
       $scope.cancel = function() {
-          $scope.equipment =  $scope.additionalInfo = '';
+          $scope.equipment = $scope.additionalInfo = '';
           $scope.selectedReason = $scope.selectedCriticality = null;
       };
 
