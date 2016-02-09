@@ -10,7 +10,25 @@
     <!-- endbuild -->
   </head>
   <body ng-app="portalTsdRequestsApp">
-
+<div class="content" ng-controller="TsdRequestController">
+    <div class="side-bar">
+        <h3 class="options-title"> Select the respective form:</h3>
+        <button class="btn option" ng-class="{'option-active': tab == 'upgrade'}" ng-click="showUpgrade()">
+            Request to replace/upgrade equipment
+        </button></br>
+        <button class="btn option" ng-class="{'option-active': tab == 'access'}" ng-click="showAccess()">
+            Request access to resources
+        </button></br>
+        <button class="btn option" ng-class="{'option-active': tab == 'bug'}" ng-click="showBug()">
+            Submit a bug report
+        </button>
+    </div>
+    <div class="form-holder">
+        <div class="request-form" ng-include src="'views/upgrade.html'" ng-show="tab == 'upgrade'"></div>
+        <div class="request-form" ng-include src="'views/access.html'" ng-show="tab == 'access'"></div>
+        <div class="request-form" ng-include src="'views/bug.html'" ng-show="tab == 'bug'"></div>
+    </div>
+</div>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
