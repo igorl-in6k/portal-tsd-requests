@@ -1,0 +1,66 @@
+body {
+    background: #e5e5e5;
+}
+
+button:focus {
+    outline:0 !important;
+}
+
+.content {
+    background: white;
+    position: absolute;
+    width: 96%;
+    height: 95%;
+    border-radius: 4px;
+    margin: 15px;
+    padding: 5px;
+}
+
+.side-bar {
+    position: absolute;
+    height: 70%;
+    width: 30%;
+}
+
+.form-holder {
+    position: absolute;
+    left: 30%;
+    width: 65%;
+    height: 70%;
+    border-left: solid 3px blue;
+}
+
+.option {
+    background: #d9edf7;
+    color: #31708f;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+.option:hover {
+    color: black;
+    background: #cde1eb;
+}
+
+.option-active, .option-active:hover {
+    background: #a4cee1;
+}
+
+.option-active:focus {
+    color: #31708f;
+}
+
+.options-title {
+    color: #31708f;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.request-form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
