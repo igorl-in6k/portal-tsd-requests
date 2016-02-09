@@ -3,19 +3,29 @@
 tsdApp
   .controller('UpgradeRequestController', ['$cookies','$scope',function($cookies, $scope) {
 
-      $scope.reasonsToReplace = ['Breakdown', 'Upgrade', 'Individual preference', 'Other'];
-      $scope.criticalities = ['Low: nice-to-have', 'Medium: ready to be patient, but not for too long', 'High: blocker for work'];
+      $scope.upgradeRequest = {
+          reasonsToReplace: [
+              'Breakdown',
+              'Upgrade',
+              'Individual preference',
+              'Other'],
+          criticalities: [
+              'Low: nice-to-have',
+              'Medium: ready to be patient, but not for too long',
+              'High: blocker for work'
+          ]
+      };
 
       $scope.send = function() {
-          $cookies.put('equipment', $scope.equipment);
-          $cookies.put('reason', $scope.selectedReason);
-          $cookies.put('criticality', $scope.selectedCriticality);
-          $cookies.put('additionalInfo', $scope.additionalInfo);
+          $cookies.put('upgrade.equipment', $scope.upgradeRequest.equipment);
+          $cookies.put('upgrade.reason', $scope.upgradeRequest.selectedReason);
+          $cookies.put('upgrade.criticality', $scope.upgradeRequest.selectedCriticality);
+          $cookies.put('upgrade.additionalInfo', $scope.upgradeRequest.additionalInfo);
       };
 
       $scope.cancel = function() {
-          $scope.equipment = $scope.additionalInfo = '';
-          $scope.selectedReason = $scope.selectedCriticality = null;
+          $scope.upgradeRequest.equipment = $scope.upgradeRequest.additionalInfo = '';
+          $scope.upgradeRequest.selectedReason = $scope.upgradeRequest.selectedCriticality = null;
       };
 
 }]);

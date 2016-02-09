@@ -1,22 +1,22 @@
 <form ng-controller="AccessRequestController">
   <div class="form-group">
     <label for="resourceAdress">Resource address:</label>
-    <input ng-model="resourceAdress" type="text" class="form-control" id="resourceAdress" placeholder="E.g: https://jira.atlassian.com/">
+    <input ng-model="accessRequest.resourceAdress" type="text" class="form-control" id="resourceAdress" placeholder="E.g: https://jira.atlassian.com/">
   </div>
   <div class="form-group">
-    <label for="projectName">Project name:</label>
-    <input ng-model="projectName" type="text" class="form-control" id="projectName" placeholder="Please, type project name here">
+    <label for="accessRequest.projectName">Project name:</label>
+    <input ng-model="accessRequest.projectName" type="text" class="form-control" id="projectName" placeholder="Please, type project name here">
   </div>
   <div class="form-group">
       <label>Do you have an account in this resourse?</label> <input type="checkbox" ng-model="haveAccount">
   </div>
   <div class="form-group">
     <label for="login">User login:</label>
-    <input ng-model="login" type="text" class="form-control" id="login" ng-disabled="!haveAccount">
+    <input ng-model="accessRequest.userLogin" type="text" class="form-control" id="login" ng-disabled="!haveAccount">
   </div>
   <div class="form-group">
       <label for="additional">Additional information:</label>
-    <textarea ng-model="additionalInfo" class="form-control" id="additional" rows="3"></textarea>
+    <textarea ng-model="accessRequest.additionalInfo" class="form-control" id="additional" rows="3"></textarea>
   </div>
   <button type="submit" ng-click="send()" class="btn btn-primary">Send</button>
   <button type="submit" ng-click="cancel()" class="btn btn-default">Cancel</button>

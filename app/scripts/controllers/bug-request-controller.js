@@ -3,17 +3,23 @@
 tsdApp
   .controller('BugRequestController', ['$cookies','$scope',function($cookies, $scope) {
 
-      $scope.problems = ['Tahometer Ltd', 'HR Grades', 'HR Portal'];
+      $scope.bugRequest = {
+          problems: [
+              'Tahometer Ltd',
+              'HR Grades',
+              'HR Portal'
+          ]
+      };
 
       $scope.send = function() {
-          $cookies.put('problem', $scope.selectedProblem);
-          $cookies.put('problemDescription', $scope.problemDescription);
-          $cookies.put('reproduceSteps', $scope.reproduceSteps);
+          $cookies.put('bug.problem', $scope.bugRequest.selectedProblem);
+          $cookies.put('bug.problemDescription', $scope.bugRequest.problemDescription);
+          $cookies.put('bug.reproduceSteps', $scope.bugRequest.reproduceSteps);
       };
 
       $scope.cancel = function() {
-          $scope.selectedProblem = null;
-          $scope.problemDescription = $scope.reproduceSteps = '';
+          $scope.bugRequest.selectedProblem = null;
+          $scope.bugRequest.problemDescription = $scope.bugRequest.reproduceSteps = '';
       };
 
 }]);

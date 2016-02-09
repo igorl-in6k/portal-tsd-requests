@@ -1,17 +1,17 @@
 <form ng-controller="BugRequestController">
     <div class="form-group">
       <label for="problem">I have a problem with:</label><br>
-      <select class="form-control" ng-model="selectedProblem" ng-options="problem for problem in problems" id="problem">
+      <select class="form-control" ng-model="bugRequest.selectedProblem" ng-options="problem for problem in bugRequest.problems" id="problem">
           <option value="">Not selected</option>
       </select>
     </div>
     <div class="form-group">
       <label for="problemDescription">Problem description:</label>
-      <input ng-model="problemDescription" type="text" class="form-control" id="problemDescription" placeholder="E.g.: 'Send' button doesn't work on the home page">
+      <input ng-model="bugRequest.problemDescription" type="text" class="form-control" id="problemDescription" placeholder="E.g.: 'Send' button doesn't work on the home page">
     </div>
     <div class="form-group">
       <label for="reproduceSteps">Steps to reproduce:</label>
-      <textarea ng-model="reproduceSteps" class="form-control" id="reproduceSteps" rows="3"></textarea>
+      <textarea ng-model="bugRequest.reproduceSteps" class="form-control" id="reproduceSteps" rows="3"></textarea>
     </div>
     <button type="submit" ng-click="send()" class="btn btn-primary">Send</button>
     <button type="submit" ng-click="cancel()" class="btn btn-default">Cancel</button>
