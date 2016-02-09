@@ -13,20 +13,26 @@
 <div class="content" ng-controller="TsdRequestController">
     <div class="side-bar">
         <h3 class="options-title"> Select the respective form:</h3>
-        <button class="btn option" ng-class="{'option-active': tab == 'upgrade'}" ng-click="showUpgrade()">
+        <button class="btn option" ng-class="{'option-active': currentTab == 'upgrade'}" ng-click="showUpgrade()">
             Request to replace/upgrade equipment
         </button></br>
-        <button class="btn option" ng-class="{'option-active': tab == 'access'}" ng-click="showAccess()">
+        <button class="btn option" ng-class="{'option-active': currentTab == 'access'}" ng-click="showAccess()">
             Request access to resources
         </button></br>
-        <button class="btn option" ng-class="{'option-active': tab == 'bug'}" ng-click="showBug()">
+        <button class="btn option" ng-class="{'option-active': currentTab == 'bug'}" ng-click="showBug()">
             Submit a bug report
         </button>
     </div>
-    <div class="form-holder">
-        <div class="request-form" ng-include src="'views/upgrade.html'" ng-show="tab == 'upgrade'"></div>
-        <div class="request-form" ng-include src="'views/access.html'" ng-show="tab == 'access'"></div>
-        <div class="request-form" ng-include src="'views/bug.html'" ng-show="tab == 'bug'"></div>
+    <div class="form-holder" ng-switch on="currentTab">
+        <div class="request-form" ng-switch-when="upgrade">
+            <ng-include src="'views/upgrade.html'"></ng-include>
+        </div>
+        <div class="request-form" ng-switch-when="access">
+            <ng-include src="'views/access.html'"></ng-include>
+        </div>
+        <div class="request-form" ng-switch-when="bug">
+            <ng-include src="'views/bug.html'"></ng-include>
+        </div>
     </div>
 </div>
     <!-- build:js(.) scripts/vendor.js -->

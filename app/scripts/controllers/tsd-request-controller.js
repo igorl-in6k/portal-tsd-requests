@@ -2,18 +2,20 @@
 
 tsdApp
   .controller('TsdRequestController', function($scope) {
-    $scope.tab = 'upgrade';
+
+    $scope.tabs = ['upgrade', 'access', 'bug'];
+    $scope.currentTab = $scope.tabs[0];
 
     $scope.showUpgrade = function() {
-        $scope.tab = 'upgrade';
+        $scope.currentTab = 'upgrade';
     };
 
     $scope.showAccess = function() {
-        $scope.tab = 'access';
+        $scope.currentTab = 'access';
     };
 
     $scope.showBug = function() {
-        $scope.tab = 'bug';
+        $scope.currentTab = 'bug';
     };
 
   });
