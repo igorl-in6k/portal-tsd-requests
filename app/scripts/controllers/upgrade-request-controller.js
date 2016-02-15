@@ -17,6 +17,7 @@ tsdApp
       };
 
       $scope.send = function() {
+          console.log('AAAAAAAAAAAAAAAAAAAAAAAAaa');
           $cookies.put('upgrade.equipment', $scope.upgradeRequest.equipment);
           $cookies.put('upgrade.reason', $scope.upgradeRequest.selectedReason);
           $cookies.put('upgrade.criticality', $scope.upgradeRequest.selectedCriticality);

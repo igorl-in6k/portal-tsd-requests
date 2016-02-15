@@ -1,5 +1,5 @@
 <div class="request-form">
-<form ng-controller="UpgradeRequestController">
+<form>
   <div class="form-group">
     <label for="equipment">Equipment you want:</label>
     <input ng-model="upgradeRequest.equipment" type="text" class="form-control" id="equipment" placeholder="E.g.: RAM 4gb, HDD 500gb">
@@ -20,7 +20,7 @@
       <label for="additional">Additional information:</label>
     <textarea ng-model="upgradeRequest.additionalInfo" class="form-control" id="additional" rows="3"></textarea>
   </div>
-  <button type="submit" ng-click="send()" class="btn btn-primary">Send</button>
+  <button type="submit" ng-click="send()" class="btn btn-primary" ng-disabled="!readyToSend()">Send</button>
   <button type="submit" ng-click="cancel()" class="btn btn-default">Cancel</button>
 </form>
 </div>

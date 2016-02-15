@@ -8,6 +8,10 @@ tsdApp
         controller: ['$cookies', '$scope', function($cookies, $scope) {
 
             $scope.upgradeRequest = {
+                equipment: '',
+                selectedReason: '',
+                selectedCriticality: '',
+                additionalInfo: '',
                 reasonsToReplace: [
                     'Breakdown',
                     'Upgrade',
@@ -18,6 +22,7 @@ tsdApp
                     'Medium: ready to be patient, but not for too long',
                     'High: blocker for work'
                 ]
+
             };
 
             $scope.send = function() {
@@ -30,6 +35,12 @@ tsdApp
             $scope.cancel = function() {
                 $scope.upgradeRequest.equipment = $scope.upgradeRequest.additionalInfo = '';
                 $scope.upgradeRequest.selectedReason = $scope.upgradeRequest.selectedCriticality = null;
+            };
+
+            $scope.readyToSend = function() {
+                return $scope.upgradeRequest.equipment != '' &&
+                       $scope.upgradeRequest.selectedReason != '' &&
+                        $scope.upgradeRequest.selectedCriticality != '';
             };
 
       }]
