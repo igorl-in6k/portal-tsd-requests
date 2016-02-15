@@ -24,9 +24,10 @@
         </button>
     </div>
     <div class="form-holder" ng-switch on="currentTab">
-        <div class="request-form" ng-switch-when="upgrade">
+        <!-- <div class="request-form" ng-switch-when="upgrade">
             <ng-include src="'views/upgrade.html'"></ng-include>
-        </div>
+        </div> -->
+        <upgrade-form ng-switch-when="upgrade"></upgrade-form>
         <div class="request-form" ng-switch-when="access">
             <ng-include src="'views/access.html'"></ng-include>
         </div>
@@ -52,6 +53,7 @@
         <script src="scripts/controllers/upgrade-request-controller.js"></script>
         <script src="scripts/controllers/access-request-controller.js"></script>
         <script src="scripts/controllers/bug-request-controller.js"></script>
+        <script src="scripts/directives/upgrade-form-directive.js"></script>
         <!-- endbuild -->
 </body>
 </html>
