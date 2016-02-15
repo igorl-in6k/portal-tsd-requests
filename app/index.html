@@ -26,10 +26,7 @@
     <div class="form-holder" ng-switch on="currentTab">
         <upgrade-form ng-switch-when="upgrade"></upgrade-form>
         <access-form ng-switch-when="access"></access-form>
-        
-        <div class="request-form" ng-switch-when="bug">
-            <ng-include src="'views/bug.html'"></ng-include>
-        </div>
+        <bug-form ng-switch-when="bug"></bug-form>
     </div>
 </div>
     <!-- build:js(.) scripts/vendor.js -->
@@ -51,6 +48,7 @@
         <script src="scripts/controllers/bug-request-controller.js"></script>
         <script src="scripts/directives/upgrade-form-directive.js"></script>
         <script src="scripts/directives/access-form-directive.js"></script>
+        <script src="scripts/directives/bug-form-directive.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -5,7 +5,7 @@ tsdApp
     return {
         restrict: 'E',
         templateUrl: 'views/upgrade.html',
-        controller: ['$cookies','$scope',function($cookies, $scope) {
+        controller: ['$cookies', '$scope', function($cookies, $scope) {
 
             $scope.upgradeRequest = {
                 reasonsToReplace: [

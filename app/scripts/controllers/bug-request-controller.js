@@ -1,7 +1,7 @@
 'use strict';
 
 tsdApp
-  .controller('BugRequestController', ['$cookies','$scope',function($cookies, $scope) {
+  .controller('BugRequestController', ['$cookies', '$scope', function($cookies, $scope) {
 
       $scope.bugRequest = {
           problems: [
