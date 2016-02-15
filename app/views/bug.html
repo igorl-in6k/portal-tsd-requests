@@ -1,5 +1,5 @@
 <div class="request-form">
-<form ng-controller="BugRequestController">
+<form>
     <div class="form-group">
       <label for="problem">I have a problem with:</label><br>
       <select class="form-control" ng-model="bugRequest.selectedProblem" ng-options="problem for problem in bugRequest.problems" id="problem">
@@ -14,7 +14,7 @@
       <label for="reproduceSteps">Steps to reproduce:</label>
       <textarea ng-model="bugRequest.reproduceSteps" class="form-control" id="reproduceSteps" rows="3"></textarea>
     </div>
-    <button type="submit" ng-click="send()" class="btn btn-primary">Send</button>
+    <button type="submit" ng-click="send()" class="btn btn-primary" ng-disabled="!readyToSend()">Send</button>
     <button type="submit" ng-click="cancel()" class="btn btn-default">Cancel</button>
 </form>
 </div>

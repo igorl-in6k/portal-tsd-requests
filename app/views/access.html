@@ -1,5 +1,5 @@
 <div class="request-form">
-<form ng-controller="AccessRequestController">
+<form>
   <div class="form-group">
     <label for="resourceAdress">Resource address:</label>
     <input ng-model="accessRequest.resourceAdress" type="text" class="form-control" id="resourceAdress" placeholder="E.g: https://jira.atlassian.com/">
@@ -19,7 +19,7 @@
       <label for="additional">Additional information:</label>
     <textarea ng-model="accessRequest.additionalInfo" class="form-control" id="additional" rows="3"></textarea>
   </div>
-  <button type="submit" ng-click="send()" class="btn btn-primary">Send</button>
+  <button type="submit" ng-click="send()" class="btn btn-primary" ng-disabled="!readyToSend()">Send</button>
   <button type="submit" ng-click="cancel()" class="btn btn-default">Cancel</button>
 </form>
 </div>
