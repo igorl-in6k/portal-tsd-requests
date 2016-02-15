@@ -8,6 +8,9 @@ tsdApp
         controller: ['$cookies', '$scope', function($cookies, $scope) {
 
             $scope.bugRequest = {
+                selectedProblem: '',
+                problemDescription: '',
+                reproduceSteps: '',
                 problems: [
                     'Tahometer Ltd',
                     'HR Grades',
@@ -24,6 +27,12 @@ tsdApp
             $scope.cancel = function() {
                 $scope.bugRequest.selectedProblem = null;
                 $scope.bugRequest.problemDescription = $scope.bugRequest.reproduceSteps = '';
+            };
+
+            $scope.readyToSend = function() {
+                return $scope.bugRequest.selectedProblem != '' &&
+                       $scope.bugRequest.problemDescription != '' &&
+                        $scope.bugRequest.reproduceSteps != '';
             };
 
       }]
